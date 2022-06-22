@@ -1,0 +1,57 @@
+<header (click)="close($event)">
+  <div class="nav">
+    <div class="row">
+      <div class="flex">
+        <div class="burger-menu" [class.active]="active" (click)="onBurgerClicked()">
+          <div class="burger-container">
+            <div class="burger-inner"></div>
+          </div>
+        </div>
+        <img src="assets/img/logo.png" alt="">
+      </div>
+      <nav class="nav-center">
+        <ol class="nav-center__block"  [class.active]="active">
+          <div class="nav-center__block-item" *ngFor="let item of arrayNav">
+            <li class="nav-center__block-item__li">{{item}}</li>
+            <div class="arrow">
+              <i class="arrow-down"></i>
+            </div>
+          </div>
+        </ol>
+        <div>
+          <img src="assets/img/search.png" id="searchId" class="nav-center__search" (click)="openInput()" alt="">
+        </div>
+        <div>
+          <button class="btn btn-blob">
+            <div class="btn-closer">&times;</div>
+          </button>
+        </div>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="nav-right__message">
+        <img src="assets/img/message.png" alt="">
+      </div>
+      <div class="nav-right__call">
+        <img src="assets/img/call.png" alt="">
+      </div>
+      <div class="nav-right__avatar">
+        <div class="nav-right__avatar-img"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="search">
+  <div *ngIf="isActive" class="search-input" [@fadeInOut]="isAnimation">
+     <span class="icon">
+      <img src="assets/img/search.png" class="fa fa-search">
+    </span>
+    <input (click)="openModal()" type="search" id="search" placeholder="Search..."/>
+    <div>
+      <button class="search-btn">Найти</button>
+    </div>
+  </div>
+  <app-modal *ngIf="isModal"></app-modal>
+</div>
+

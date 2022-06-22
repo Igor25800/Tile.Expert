@@ -1,0 +1,59 @@
+@import 'src/assets/style/variables';
+
+.body {
+  width: 100%;
+  background-color: $color-white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2)
+}
+
+.group {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 5px;
+
+  .group-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    &__label {
+      margin-left: 1rem;
+    }
+
+    &__checkbox {
+      accent-color: auto;
+      display: block;
+      width: 30px;
+      height: 20px;
+      accent-color: #74992e;;
+    }
+
+    &__input {
+      width: 60%;
+      height: 40px;
+      padding-left: 1rem;
+      border: 1px solid #d9d9d9;
+    }
+
+    &__selected {
+      width: 40%;
+      height: 40px;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center
+}
+
+.flex-between {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
